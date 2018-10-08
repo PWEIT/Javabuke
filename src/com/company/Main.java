@@ -6,6 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        String a = "XIXI";
+
         String s = "Hello";
         String s2 = "Hello";
         System.out.println(s == s2);
