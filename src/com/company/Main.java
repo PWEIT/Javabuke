@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String a = "XIXI";
+        String a = "XIXI555555";
 
         String s = "Hello";
         String s2 = "Hello";
