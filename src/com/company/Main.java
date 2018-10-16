@@ -1,10 +1,53 @@
 package com.company;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        int k = 8;
+        String text = "We have to wait so long for Game of Thrones!";
+
+        String text1 = rectEncryption(text, k);
+
+//        Date date =
+        TwoDHashMap.fhmap();
+
+        Student student1 = new Student("111", 111);
+        Student student2 = new Student("222", 222);
+
+        ArrayList<Student> stuArrayList = new ArrayList<Student>();
+
+        //add
+        stuArrayList.add(student1);
+        stuArrayList.add(student1);
+        stuArrayList.add(student1);
+
+        student1.setGPA(123);// stuArrayList 里面三个元素全部改为 "123"
+
+        stuArrayList.add(0, student2); //在数组最前面添加元素
+
+        String[] strArray1 = new String[4];
+
+        strArray1 = new String[5];
+
+
+        String[] strArray = new String[]{"str1", "str2", "str3", "str4"};
+
+        for (String str222 : strArray) {
+            System.out.println(str222);
+        }
+
+
+//        Student student = new Student();
+
+//        String[] strArray = {"str1","str2","str3","str4"};
+//        for(String str : strArray){
+//            System.out.println(str);
+//        }
 
 
         String a = "XIXI";
@@ -101,11 +144,11 @@ public class Main {
 
         Rook rook2 = new Rook(3,6);
 
-        rook2.
+        //rook2.
 
         int col = piece.move();
 
-        String
+       // String
 
         Movie movie = new Movie("Iron Man");
 
@@ -123,6 +166,59 @@ public class Main {
 
         System.out.println("end");
     }
+// 2016 S2 Q2
+    public static int num_discs(int n, int[] s) {
+
+        int numDisk = 1;
+        int memoryLeft = n - s[1];
+
+        for (int i = 1; i < s.length; i++){
+
+            if (memoryLeft >= s[i]){
+                memoryLeft = memoryLeft - s[i];
+            }
+            else{
+
+            }
+
+
+
+        }
+        return n;
+    }
+
+    public static String rectEncryption(String text, int k){
+
+        String outPut = "";
+
+        //确认行数
+        int numRow = text.length()/k;
+
+        int numStar = k - text.length() % k; //最后一行*的数量
+
+        if(text.length() % k != 0){
+            numRow = numRow + 1;
+        }
+
+        text = text.toUpperCase(); //全部变成大写
+        text = text.replaceAll(" ","#"); //用#代替空格
+
+        //在字符串最后加上相应数量的*
+        for(int i = 0; i < numStar; i++){
+            text = text + "*";
+        }
+
+        //循环遍历 重新排序
+        for(int i = 0; i < k; i += 1){
+            for(int j = i; j < text.length(); j += k){
+                outPut = outPut + text.charAt(j);
+            }
+        }
+
+        return outPut;
+    }
+
+
 }
 
 
